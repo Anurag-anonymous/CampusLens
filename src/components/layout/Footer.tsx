@@ -1,4 +1,49 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import Link from 'next/link';
+
 export const Footer = () => {
-    return (_jsx("footer", { className: "bg-gray-900 text-gray-300 mt-12 border-t border-gray-200", children: _jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12", children: [_jsxs("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8 mb-8", children: [_jsxs("div", { children: [_jsxs("div", { className: "flex items-center gap-2 font-bold text-lg text-white mb-4", children: [_jsx("div", { className: "w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-sm", children: "C" }), "CampusLens"] }), _jsx("p", { className: "text-sm", children: "Discover your perfect college with comprehensive data and comparisons." })] }), _jsxs("div", { children: [_jsx("h3", { className: "font-semibold text-white mb-3", children: "Features" }), _jsxs("ul", { className: "space-y-2 text-sm", children: [_jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "Browse Colleges" }) }), _jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "Compare Colleges" }) }), _jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "Save Favorites" }) })] })] }), _jsxs("div", { children: [_jsx("h3", { className: "font-semibold text-white mb-3", children: "Resources" }), _jsxs("ul", { className: "space-y-2 text-sm", children: [_jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "About Us" }) }), _jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "Contact" }) }), _jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "FAQ" }) })] })] }), _jsxs("div", { children: [_jsx("h3", { className: "font-semibold text-white mb-3", children: "Legal" }), _jsxs("ul", { className: "space-y-2 text-sm", children: [_jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "Privacy" }) }), _jsx("li", { children: _jsx("a", { href: "#", className: "hover:text-white transition", children: "Terms" }) })] })] })] }), _jsx("div", { className: "border-t border-gray-800 pt-8 text-center text-sm", children: _jsx("p", { children: "\u00A9 2024 CampusLens. All rights reserved." }) })] }) }));
+  return (
+    <footer className="mt-12 border-t border-gray-200 bg-gray-900 text-gray-300">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-4">
+          <div>
+            <div className="mb-4 flex items-center gap-2 text-lg font-bold text-white">
+              <div className="flex h-6 w-6 items-center justify-center rounded bg-primary text-sm text-white">
+                C
+              </div>
+              CampusLens
+            </div>
+            <p className="text-sm">
+              Discover your perfect college with comprehensive data and comparisons.
+            </p>
+          </div>
+          <div>
+            <h3 className="mb-3 font-semibold text-white">Features</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="transition hover:text-white">Browse Colleges</a></li>
+              <li><a href="#" className="transition hover:text-white">Compare Colleges</a></li>
+              <li><a href="#" className="transition hover:text-white">Save Favorites</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="mb-3 font-semibold text-white">Resources</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/about" className="transition hover:text-white">About Us</Link></li>
+              <li><a href="#" className="transition hover:text-white">Contact</a></li>
+              <li><a href="#" className="transition hover:text-white">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="mb-3 font-semibold text-white">Legal</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#" className="transition hover:text-white">Privacy</a></li>
+              <li><a href="#" className="transition hover:text-white">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-gray-800 pt-8 text-center text-sm">
+          <p>© 2024 CampusLens. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
 };

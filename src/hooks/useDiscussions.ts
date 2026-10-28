@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { DiscussionAnswer, DiscussionThread } from '../types/college';
 import { DISCUSSIONS_STORAGE_KEY, seedDiscussions } from '../utils/discussions';
 
@@ -18,6 +18,8 @@ const safeParse = (value: string | null) => {
 export const useDiscussions = () => {
   const [threads, setThreads] = useState<DiscussionThread[]>([]);
   const [isReady, setIsReady] = useState(false);
+  const threadsRef = useRef(threads);
+  threadsRef.current = threads;
 
   useEffect(() => {
     const saved = safeParse(localStorage.getItem(DISCUSSIONS_STORAGE_KEY));
@@ -99,12 +101,12 @@ export const useDiscussions = () => {
 
   const bumpViews = useCallback(
     (threadId: string) => {
-      const nextThreads = threads.map((thread) =>
+      const nextThreads = threadsRef.current.map((thread) =>
         thread.id === threadId ? { ...thread, views: thread.views + 1 } : thread,
       );
       persist(nextThreads);
     },
-    [persist, threads],
+    [persist],
   );
 
   const stats = useMemo(
